@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Inchoo_Weblog>
+            <version>0.1.0</version>
+        </Inchoo_Weblog>
+    </modules>
+    <global>
+        <models>
+            <weblog>
+                <class>Inchoo_Weblog_Model</class>
+                <resourceModel>weblog_resource</resourceModel>
+            </weblog>
+            <weblog_resource>
+                <class>Inchoo_Weblog_Model_Resource</class>
+                <!-- set table name: blogpost should point to blog-posts -->
+                <entities>
+                    <blogpost>
+                        <table>blog_posts</table>
+                    </blogpost>
+                </entities>
+            </weblog_resource>
+        </models>
+    </global>
+    <frontend>
+        <routers>
+            <simple>
+                <use>standard</use>
+                <args>
+                    <module>Inchoo_Weblog</module>
+                    <frontName>weblog</frontName>
+                </args>
+            </simple>
+        </routers>
+    </frontend>
+</config>
