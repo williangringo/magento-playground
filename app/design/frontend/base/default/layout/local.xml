@@ -1,0 +1,10 @@
+<layout version="0.1.0">
+    <simple_index_index>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>inchoo/simple/simple_page.phtml</template>
+            </action>
+            <block type="page/template_links" name="top.links" />
+        </reference>
+    </simple_index_index>
+</layout>
