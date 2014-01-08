@@ -6,6 +6,7 @@
         </Inchoo_Spy>
     </modules>
     <global>
+        <!-- observer setup -->
         <events>
             <controller_front_init_routers>
                 <observers>

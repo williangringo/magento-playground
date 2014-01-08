@@ -1,9 +1,11 @@
 <layout version="0.1.0">
     <simple_index_index>
         <reference name="root">
+            <!-- setup template -->
             <action method="setTemplate">
                 <template>inchoo/simple/simple_page.phtml</template>
             </action>
+            <!-- setup child block -->
             <block type="page/template_links" name="top.links" />
         </reference>
     </simple_index_index>
