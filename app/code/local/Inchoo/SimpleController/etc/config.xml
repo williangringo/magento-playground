@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Inchoo_SimpleController>
+            <version>0.1.0</version>
+        </Inchoo_SimpleController>
+    </modules>
+    <global>
+    </global>
+    <!-- setup router -->
+    <frontend>
+        <routers>
+            <simple>
+                <use>standard</use>
+                <args>
+                    <module>Inchoo_SimpleController</module>
+                    <frontName>simple</frontName>
+                </args>
+            </simple>
+        </routers>
+    </frontend>
+</config>
