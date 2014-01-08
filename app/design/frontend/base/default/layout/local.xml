@@ -1,5 +1,5 @@
 <layout version="0.1.0">
-    <default>
-        <block type="page/html" name="root" output="toHtml" template="inchoo/simple/simple_page.phtml" />
-    </default>
+    <simple_index_index>
+        <block type="page/html" name="root" output="toHtml" template="inchoo/simple/simple_page.phtml"></block>
+    </simple_index_index>
 </layout>
