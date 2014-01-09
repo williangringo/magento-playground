@@ -1,0 +1,4 @@
+<?php $post = Mage::registry('blog_post'); ?>
+<h1><?php echo $post->getTitle(); ?></h1>
+<h6><?php echo $post->getTimestamp(); ?></h6>
+<p><?php echo nl2br($post->getPost()); ?></p>

@@ -1,0 +1,12 @@
+<layout version="0.1.0">
+    <weblog_posts_index>
+        <reference name="content">
+            <block type="core/template" name="blogContent" template="inchoo/weblog/all.phtml" />
+        </reference>
+    </weblog_posts_index>
+    <weblog_posts_view>
+        <reference name="content">
+            <block type="core/template" name="blogContent" template="inchoo/weblog/single.phtml" />
+        </reference>
+    </weblog_posts_view>
+</layout>

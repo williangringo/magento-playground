@@ -23,14 +23,21 @@
         </models>
     </global>
     <frontend>
+        <layout>
+            <updates>
+                <weblog>
+                    <file>inchoo_weblog.xml</file>
+                </weblog>
+            </updates>
+        </layout>
         <routers>
-            <simple>
+            <weblog>
                 <use>standard</use>
                 <args>
                     <module>Inchoo_Weblog</module>
                     <frontName>weblog</frontName>
                 </args>
-            </simple>
+            </weblog>
         </routers>
     </frontend>
 </config>
