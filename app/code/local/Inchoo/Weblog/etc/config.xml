@@ -6,6 +6,14 @@
         </Inchoo_Weblog>
     </modules>
     <global>
+        <resources>
+            <weblog_setup>
+                <setup>
+                    <module>Inchoo_Weblog</module>
+                    <class>Inchoo_Weblog_Model_Resource_Setup</class>
+                </setup>
+            </weblog_setup>
+        </resources>
         <helpers>
             <inchoo_weblog>
                 <class>Inchoo_Weblog_Helper</class>
