@@ -1,5 +1,12 @@
 <?xml version="1.0"?>
 <config>
+    <menu>
+        <inchoo_weblog>
+            <title>Weblog</title>
+            <action>adminhtml/inchoo_weblog_posts/</action>
+            <sort_order>99</sort_order>
+        </inchoo_weblog>
+    </menu>
     <acl>
         <resources>
             <admin>

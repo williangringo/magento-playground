@@ -48,4 +48,15 @@
             </weblog>
         </routers>
     </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Inchoo_Weblog before="Mage_Adminhtml">Inchoo_Weblog_Adminhtml</Inchoo_Weblog>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
 </config>
