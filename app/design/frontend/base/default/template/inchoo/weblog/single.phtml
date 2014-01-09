@@ -1,4 +1,25 @@
-<?php $post = Mage::registry('blog_post'); ?>
+<?php
+    $state = Mage::helper('inchoo_weblog')->getCommentsState();
+    $post = Mage::registry('blog_post');
+    $comments = Mage::registry('blog_comments');
+?>
 <h1><?php echo $post->getTitle(); ?></h1>
 <h6><?php echo $post->getTimestamp(); ?></h6>
 <p><?php echo nl2br($post->getPost()); ?></p>
+
+<?php if ($state == 1): ?>
+<br/><hr/>
+    <ul>
+<?php foreach($comments as $comment): ?>
+        <li>
+            <h6><?php echo $comment->getDate(); ?></h6>
+            <p><?php echo nl2br($comment->getComment()); ?></p>
+        </li>
+<?php endforeach; ?>
+    </ul>
+<br/>
+<form action="<?php echo Mage::getUrl('*/*/comment'), 'id/', $post->getId(); ?>" method="post">
+    <textarea name="comment" cols="30" rows="4"></textarea>
+    <input type="submit"/>
+</form>
+<?php endif; ?>

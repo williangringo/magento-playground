@@ -6,6 +6,11 @@
         </Inchoo_Weblog>
     </modules>
     <global>
+        <helpers>
+            <inchoo_weblog>
+                <class>Inchoo_Weblog_Helper</class>
+            </inchoo_weblog>
+        </helpers>
         <models>
             <weblog>
                 <class>Inchoo_Weblog_Model</class>
@@ -18,6 +23,9 @@
                     <blogpost>
                         <table>blog_posts</table>
                     </blogpost>
+                    <blogcomments>
+                        <table>blog_comments</table>
+                    </blogcomments>
                 </entities>
             </weblog_resource>
         </models>
