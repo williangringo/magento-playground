@@ -4,18 +4,20 @@ class Inchoo_Weblog_Adminhtml_Inchoo_Weblog_PostsController extends Mage_Adminht
 {
     public function indexAction()
     {
+        $this->_title($this->__('Weblog'))->_title($this->__('Posts'));
         $this->loadLayout();
-        $this->_setActiveMenu('system/inchoo_weblog_posts');
+        $this->_setActiveMenu('inchoo_weblog/posts');
+        $block = $this->getLayout()->createBlock('inchoo_weblog/adminhtml_weblog_postlist');
+        var_dump($block);
+        $this->_addContent($block);
         $this->renderLayout();
     }
 
-    /**
-     * Check currently called action by permissions for current user
-     *
-     * @return bool
-     */
-    protected function _isAllowed() {
-        return Mage::getModel('admin/session')->isAllowed('inchoo_weblog_post');
+    public function gridAction()
+    {
+        $this->loadLayout();
+        $this->getResponse()->setBody(
+            $this->getLayout()->createBlock('inchoo_weblog/adminhtml_weblog_posts_grid')->toHtml()
+        );
     }
-
 }

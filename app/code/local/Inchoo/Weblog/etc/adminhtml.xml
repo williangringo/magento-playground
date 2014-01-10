@@ -3,8 +3,19 @@
     <menu>
         <inchoo_weblog>
             <title>Weblog</title>
-            <action>adminhtml/inchoo_weblog_posts/</action>
-            <sort_order>99</sort_order>
+            <sort_order>10</sort_order>
+            <children>
+                <posts translate="title" module="inchoo_weblog">
+                    <sort_order>10</sort_order>
+                    <title>Posts</title>
+                    <action>adminhtml/inchoo_weblog_posts</action>
+                </posts>
+                <comments translate="title" module="inchoo_weblog">
+                    <sort_order>20</sort_order>
+                    <title>Comments</title>
+                    <action>adminhtml/inchoo_weblog_comments</action>
+                </comments>
+            </children>
         </inchoo_weblog>
     </menu>
     <acl>

@@ -6,6 +6,11 @@
         </Inchoo_Weblog>
     </modules>
     <global>
+        <blocks>
+            <inchoo_weblog>
+                <class>Inchoo_Weblog_Block</class>
+            </inchoo_weblog>
+        </blocks>
         <resources>
             <weblog_setup>
                 <setup>
