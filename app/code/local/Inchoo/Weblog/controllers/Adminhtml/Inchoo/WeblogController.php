@@ -5,7 +5,8 @@ class Inchoo_Weblog_Adminhtml_Inchoo_WeblogController extends Mage_Adminhtml_Con
     public function indexAction()
     {
         $this->loadLayout()->_setActiveMenu('inchoo_weblog');
-        $this->_addContent($this->getLayout()->createBlock('inchoo_weblog/adminhtml_list'));
+        $this->_addContent($this->getLayout()->createBlock('inchoo_weblog/adminhtml_list'))
+            ->_addLeft($this->getLayout()->createBlock('inchoo_weblog/adminhtml_tabs'));
         $this->renderLayout();
     }
 
@@ -16,11 +17,11 @@ class Inchoo_Weblog_Adminhtml_Inchoo_WeblogController extends Mage_Adminhtml_Con
         );
     }
 
-    public function newAction(){
-        /**
-         * TODO: write this function
-         */
+    public function newAction()
+    {
         $this->loadLayout()->_setActiveMenu('inchoo_weblog');
+        $this->_addContent($this->getLayout()->createBlock('inchoo_weblog/adminhtml_new'))
+            ->_addLeft($this->getLayout()->createBlock('inchoo_weblog/adminhtml_tabs'));
         $this->renderLayout();
     }
 
