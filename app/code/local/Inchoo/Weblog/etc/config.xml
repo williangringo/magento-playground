@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<config>
+    <!-- Module version -->
+    <modules>
+        <Inchoo_Weblog>
+            <version>0.1.0</version>
+        </Inchoo_Weblog>
+    </modules>
+
+    <global>
+        <!-- Layout blocks -->
+        <blocks>
+            <inchoo_weblog>
+                <class>Inchoo_Weblog_Block</class>
+            </inchoo_weblog>
+        </blocks>
+
+        <!-- Module setup -->
+        <resources>
+            <weblog_setup>
+                <setup>
+                    <module>Inchoo_Weblog</module>
+                    <class>Inchoo_Weblog_Model_Resource_Setup</class>
+                </setup>
+            </weblog_setup>
+        </resources>
+
+        <!-- Used for translations and fetching comment settings -->
+        <helpers>
+            <inchoo_weblog>
+                <class>Inchoo_Weblog_Helper</class>
+            </inchoo_weblog>
+        </helpers>
+
+        <!-- Models and collections -->
+        <models>
+            <weblog>
+                <class>Inchoo_Weblog_Model</class>
+                <resourceModel>weblog_resource</resourceModel>
+            </weblog>
+            <weblog_resource>
+                <class>Inchoo_Weblog_Model_Resource</class>
+                <!-- set table name: blogpost should point to blog-posts -->
+                <entities>
+                    <blogpost>
+                        <table>blog_posts</table>
+                    </blogpost>
+                    <blogcomments>
+                        <table>blog_comments</table>
+                    </blogcomments>
+                </entities>
+            </weblog_resource>
+        </models>
+    </global>
+
+    <frontend>
+        <!-- Frontend layout .xml include -->
+        <layout>
+            <updates>
+                <weblog>
+                    <file>inchoo_weblog.xml</file>
+                </weblog>
+            </updates>
+        </layout>
+
+        <!-- Frontend router -->
+        <routers>
+            <weblog>
+                <use>standard</use>
+                <args>
+                    <module>Inchoo_Weblog</module>
+                    <frontName>weblog</frontName>
+                </args>
+            </weblog>
+        </routers>
+    </frontend>
+
+    <admin>
+        <!-- Admin router -->
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Inchoo_Weblog before="Mage_Adminhtml">Inchoo_Weblog_Adminhtml</Inchoo_Weblog>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
