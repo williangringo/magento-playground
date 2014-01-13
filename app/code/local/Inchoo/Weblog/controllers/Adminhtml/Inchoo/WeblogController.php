@@ -52,12 +52,14 @@ class Inchoo_Weblog_Adminhtml_Inchoo_WeblogController extends Mage_Adminhtml_Con
 
     public function deleteAction()
     {
-        /**
-         * TODO: Write this function
-         */
-        echo "admin delete";
-        $this->loadLayout()->_setActiveMenu('inchoo_weblog');
-        $this->renderLayout();
+        $id = $this->getRequest()->getParam('id');
+
+        if ($id) {
+            $blogpost = Mage::getModel('weblog/blogpost')->load($id);
+            $blogpost->delete();
+        }
+
+        $this->_redirect('*/*/index');
     }
 
     public function saveAction()
