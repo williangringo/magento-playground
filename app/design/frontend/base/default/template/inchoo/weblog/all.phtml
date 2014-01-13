@@ -1,0 +1,9 @@
+<?php
+    $blog = Mage::registry('blog_posts');
+
+    foreach ($blog as $post):
+?>
+<h1><?php echo $post->getTitle(); ?></h1>
+<h6><?php echo $post->getTimestamp(); ?></h6>
+<p><a href="<?php echo Mage::getUrl('*/*/view'), 'id/', $post->getId(); ?>">View post</a></p>
+<?php endforeach; ?>
