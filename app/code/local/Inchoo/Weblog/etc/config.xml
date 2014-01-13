@@ -1,16 +1,21 @@
 <?xml version="1.0"?>
 <config>
+    <!-- Module version -->
     <modules>
         <Inchoo_Weblog>
             <version>0.1.0</version>
         </Inchoo_Weblog>
     </modules>
+
     <global>
+        <!-- Layout blocks -->
         <blocks>
             <inchoo_weblog>
                 <class>Inchoo_Weblog_Block</class>
             </inchoo_weblog>
         </blocks>
+
+        <!-- Module setup -->
         <resources>
             <weblog_setup>
                 <setup>
@@ -19,11 +24,15 @@
                 </setup>
             </weblog_setup>
         </resources>
+
+        <!-- Used for translations and fetching comment settings -->
         <helpers>
             <inchoo_weblog>
                 <class>Inchoo_Weblog_Helper</class>
             </inchoo_weblog>
         </helpers>
+
+        <!-- Models and collections -->
         <models>
             <weblog>
                 <class>Inchoo_Weblog_Model</class>
@@ -43,7 +52,9 @@
             </weblog_resource>
         </models>
     </global>
+
     <frontend>
+        <!-- Frontend layout .xml include -->
         <layout>
             <updates>
                 <weblog>
@@ -51,6 +62,8 @@
                 </weblog>
             </updates>
         </layout>
+
+        <!-- Frontend router -->
         <routers>
             <weblog>
                 <use>standard</use>
@@ -61,7 +74,9 @@
             </weblog>
         </routers>
     </frontend>
+
     <admin>
+        <!-- Admin router -->
         <routers>
             <adminhtml>
                 <args>

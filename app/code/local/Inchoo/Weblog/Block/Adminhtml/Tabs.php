@@ -5,16 +5,15 @@ class Inchoo_Weblog_Block_Adminhtml_Tabs extends Mage_Adminhtml_Block_Widget_Tab
     public function __construct()
     {
         parent::__construct();
-        $this->setId('weblog_form_tabs');
 
+        $this->setId('weblog_form_tabs');
         $this->setTitle(Mage::helper('inchoo_weblog')->__('Inchoo Weblog'));
     }
 
     protected function _beforeToHtml()
     {
-        /**
-         * Last one with 'actvive' => true will be displayed by default
-         */
+        /** Last one with 'actvive' => true will be displayed by default */
+
         $this->addTab('weblog_list_section', array(
             'label' => Mage::helper('inchoo_weblog')->__('List posts'),
             'title' => Mage::helper('inchoo_weblog')->__('List all posts'),

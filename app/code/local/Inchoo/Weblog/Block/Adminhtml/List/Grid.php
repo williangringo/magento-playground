@@ -10,6 +10,12 @@ class Inchoo_Weblog_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Block_Widge
         $this->setDefaultsort('blogpost_id');
         $this->setUseAjax(true);
 
+        /**
+         * Disable state storage in session
+         *
+         * When cycling through tabs, state of each tab is stored in session.
+         * Can be disabled for development purposes
+         */
         //$this->setSaveParametersInSession(false);
     }
 
@@ -31,15 +37,14 @@ class Inchoo_Weblog_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Block_Widge
     {
         $this->addColumn('blogpost_id', array(
             'header' => Mage::helper('inchoo_weblog')->__('Post #'),
-            'sortable' => true,
             'width' => '50px',
-            'filter'   => false,
-            'index' => 'blogpost_id'
+            'filter'   => false, /** Disable filter input box on field */
+            'index' => 'blogpost_id',
         ));
         $this->addColumn('timestamp', array(
             'header' => Mage::helper('inchoo_weblog')->__('Date'),
             'width' => '200px',
-            'index' => 'timestamp'
+            'index' => 'timestamp',
         ));
         $this->addColumn('comments', array(
             'header' => Mage::helper('inchoo_weblog')->__('# Comments'),
@@ -56,10 +61,10 @@ class Inchoo_Weblog_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Block_Widge
         $this->addColumn('edit', array(
             'header'   => Mage::helper('inchoo_weblog')->__('Edit'),
             'width'    => 15,
-            'sortable' => false,
+            'sortable' => false, /** Disable sorting by this column */
             'filter'   => false,
             'type'     => 'action',
-            'getter'     => 'getId',
+            'getter'     => 'getId', /** (auto)Defined in collection */
             'actions'  => array(
                 array(
                     'url'     => array('base'=>'*/*/edit'),
@@ -83,7 +88,6 @@ class Inchoo_Weblog_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Block_Widge
                 ),
             )
         ));
-
 
         return parent::_prepareColumns();
     }

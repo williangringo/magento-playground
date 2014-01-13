@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <config>
+    <!-- Enable tab -->
     <menu>
         <inchoo_weblog>
             <title>Weblog</title>
@@ -7,7 +8,9 @@
             <action>adminhtml/inchoo_weblog</action>
         </inchoo_weblog>
     </menu>
-    <acl>
+
+    <!-- Enable comments related tab in configuration -->
+    <acl><!-- Access control list -->
         <resources>
             <admin>
                 <children>

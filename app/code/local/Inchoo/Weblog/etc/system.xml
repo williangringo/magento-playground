@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <config>
+    <!-- Comments configuration settings -->
     <tabs>
         <inchoo module="inchoo_weblog">
             <label>Inchoo</label>
@@ -8,11 +9,14 @@
     </tabs>
 
     <sections>
+        <!-- New tab in admin interface -->
         <inchoo_weblog module="inchoo_weblog">
             <label>Weblog</label>
             <tab>inchoo</tab>
             <sort_order>10</sort_order>
             <show_in_default>1</show_in_default>
+
+            <!-- Comments configuration settings-->
             <groups>
                 <settings>
                     <label>InchooWebLog Settings</label>
