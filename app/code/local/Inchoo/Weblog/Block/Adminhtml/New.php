@@ -8,7 +8,7 @@ class Inchoo_Weblog_Block_Adminhtml_New extends Mage_Adminhtml_Block_Widget_Form
 
         $this->_objectId = 'id';
         $this->_blockGroup = 'inchoo_weblog';
-        $this->_controller = 'adminhtml';
+        $this->_controller = 'adminhtml'; // WTF?
         $this->_mode = 'new';
 
         //$this->_updateButton('save', 'label', Mage::helper('inchoo_weblog')->__('Save post'));
