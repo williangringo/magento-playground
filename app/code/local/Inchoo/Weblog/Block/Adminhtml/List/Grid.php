@@ -22,11 +22,12 @@ class Inchoo_Weblog_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Block_Widge
     protected function _prepareCollection()
     {
         $collection = Mage::getModel('weblog/blogpost')->getCollection();
-        $collection->getSelect()
-            ->join(array('a' => 'blog_comments'), 'main_table.blogpost_id = a.post_id_fk', array(
-                'comments'       => 'blogcomment_id'
-            ))
-            ->group('main_table.blogpost_id');
+        $collection->getSelect();
+        // FIX: not showing posts withou comments
+//            ->join(array('a' => 'blog_comments'), 'main_table.blogpost_id = a.post_id_fk', array(
+//                'comments'       => 'blogcomment_id'
+//            ))
+//            ->group('main_table.blogpost_id');
 
         $this->setCollection($collection);
         parent::_prepareCollection();
@@ -46,12 +47,12 @@ class Inchoo_Weblog_Block_Adminhtml_List_Grid extends Mage_Adminhtml_Block_Widge
             'width' => '200px',
             'index' => 'timestamp',
         ));
-        $this->addColumn('comments', array(
-            'header' => Mage::helper('inchoo_weblog')->__('# Comments'),
-            'width' => '50px',
-            'filter'   => false,
-            'index' => 'comments'
-        ));
+//        $this->addColumn('comments', array(
+//            'header' => Mage::helper('inchoo_weblog')->__('# Comments'),
+//            'width' => '50px',
+//            'filter'   => false,
+//            'index' => 'comments'
+//        ));
         $this->addColumn('title', array(
             'header' => Mage::helper('inchoo_weblog')->__('Title'),
             'type' => 'text',
